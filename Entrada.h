@@ -4,12 +4,12 @@ using namespace std;
 
 class Entrada {
     private:
-    string puerta="abierta";
-    string segu_puerta="desbloqueada";
-    string carro="descargado";
-    string porton="cerrado";
-    string luces="apagadas";
-    string piso_coch="sucio";
+    string puerta;
+    string segu_puerta;
+    string carro;
+    string porton;
+    string luces_ent;
+    string piso_coch;
     
 
     public:
@@ -26,21 +26,48 @@ class Entrada {
         string getPorton() {
             return porton;
         }
-        string getLuces() {
-            return luces;
+        string getLucesEnt() {
+            return luces_ent;
         }
         string getPisoCoch() {
             return piso_coch;
         }
         //setter
+        void setPuerta(string prt) {
+            puerta=prt;
+        }
+        void setSeguPuerta(string segprt) {
+            segu_puerta=segprt;
+        }
+        void setCarro(string car) {
+            carro=car;
+        }
+        void setPorton(string por) {
+            porton=por;
+        }
+        void setLucesEnt(string lu) {
+            luces_ent=lu;
+        }
+        void setPisoCoch(string pie) {
+            piso_coch=pie;
+        }
         void imprimeDatos(){
             cout<<"Estado de los dispositivos inteligentes de la entrada:"<<endl;
             cout<<"Puerta: "<<puerta<<endl;
             cout<<"Seguridad de la puerta: "<<segu_puerta<<endl;
             cout<<"Batería del vehículo: "<<carro<<endl;
             cout<<"Portón: "<<porton<<endl;
-            cout<<"Luces: "<<luces<<endl;
+            cout<<"Luces: "<<luces_ent<<endl;
             cout<<"Piso de la entrada: "<<piso_coch<<endl;
+        }
+        //Constructor
+        Entrada() {
+            puerta="abierta";
+            segu_puerta="desbloqueada";
+            carro="descargado";
+            porton="abierto";
+            luces_ent="apagadas";
+            piso_coch="sucio";
         }
 
 }; 

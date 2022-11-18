@@ -23,7 +23,23 @@ int main() {
     cin>>opcion;
     if (opcion==1){
         kitchen.imprimeDatos();
+        int ococ;
+        do {
+        cout<<"MENÚ:"<<endl;
+        cout<<"1. Lavavajillas"<<endl;
+        cout<<"2. Robot de cocina"<<endl;
+        cout<<"3. Aire acondicionado"<<endl;
+        cout<<"4. Entrada"<<endl;
+        cout<<"5. Agregar otra habitación inteligente"<<endl;
+        cout<<"6 Salir"<<endl;
+        cout<<"Seleccione el dispositivo que desea cambiar de estado al opuesto del actual: ";
+        cin>>ococ;
+        if (opcion==1){
+            kitchen.imprimeDatos();
+        }
+        }while (ococ=!6);
     }
+        
     else if (opcion==2){
         bedroom.imprimeDatos();
     }

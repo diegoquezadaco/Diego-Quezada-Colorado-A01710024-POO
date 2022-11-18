@@ -4,15 +4,15 @@ using namespace std;
 
 class Cuarto {
     private:
-    string cama="destendida";
-    string aire_acon="apagado";
-    string television="apagada";
-    string ventanas="cerradas";
-    string persianas="cerradas";
-    string bocina_int="apagada";
-    string luces="apagadas";
-    string color_luces="blanco";
-    string piso_cua="sucio";
+    string cama;
+    string aire_acon;
+    string television;
+    string ventanas;
+    string persianas;
+    string bocina_int;
+    string luces_cua;
+    string color_luces;
+    string piso_cua;
     
 
     public:
@@ -35,8 +35,8 @@ class Cuarto {
         string getBocinaInt() {
             return bocina_int;
         }
-        string getLuces() {
-            return luces;
+        string getLucesCua() {
+            return luces_cua;
         }
         string getColorLu() {
             return color_luces;
@@ -61,8 +61,8 @@ class Cuarto {
         void setBocinaInt(string boci) {
             bocina_int=boci;
         }
-        void setLuces(string lu) {
-            luces=lu;
+        void setLucesCua(string lu) {
+            luces_cua=lu;
         }
         void setPisoCua(string picua) {
             piso_cua=picua;
@@ -75,9 +75,21 @@ class Cuarto {
             cout<<"Ventanas: "<<ventanas<<endl;
             cout<<"Persianas: "<<persianas<<endl;
             cout<<"Bocina Inteligente: "<<bocina_int<<endl;
-            cout<<"Luces: "<<luces<<endl;
+            cout<<"Luces: "<<luces_cua<<endl;
             cout<<"Color de las Luces: "<<color_luces<<endl;
             cout<<"Piso de la habitación: "<<piso_cua<<endl;
+        }
+        //Constructor
+        Cuarto () {
+            cama="destendida";
+            aire_acon="apagado";
+            television="apagada";
+            ventanas="cerradas";
+            persianas="cerradas";
+            bocina_int="apagada";
+            luces_cua="apagadas";
+            color_luces="blanco";
+            piso_cua="sucio";
         }
 
 }; 

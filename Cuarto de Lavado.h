@@ -4,15 +4,14 @@ using namespace std;
 
 class CuartoLavado {
     private:
-    string car_lavadora="descargada";
-    string lavadora="apagada";
-    string ropa_lavadora="sucia";
-    string car_secadora="descargada";
-    string secadora="apagada";
-    string ropa_secadora="mojada";    
-    string bocina_int="apagada";
-    string luces="apagadas";
-    string piso_cl="sucio";
+    string car_lavadora;
+    string lavadora;
+    string ropa_lavadora;
+    string car_secadora;
+    string secadora;
+    string ropa_secadora;    
+    string luces_cl;
+    string piso_cl;
     
 
     public:
@@ -35,16 +34,37 @@ class CuartoLavado {
         string getRopaSeca() {
             return ropa_secadora;
         }
-        string getBocinaInt() {
-            return bocina_int;
-        }
-        string getLuces() {
-            return luces;
+        string getLucesCl() {
+            return luces_cl;
         }
         string getPisoCdL() {
             return piso_cl;
         }
         //setter
+        void setCarLava(string carlav) {
+            car_lavadora=carlav;
+        }
+        void setLava(string lava) {
+            lavadora=lava;
+        }
+        void setRopaLava(string ropla) {
+            ropa_lavadora=ropla;
+        }
+        void setCarSeca(string carsec) {
+            car_secadora=carsec;
+        }
+        void setSeca(string seca) {
+            secadora=seca;
+        }
+        void setRopaSeca(string ropse) {
+            ropa_secadora=ropse;
+        }
+        void setLucesCl(string lu) {
+            luces_cl=lu;
+        }
+        void setPisoCdL(string picdl) {
+            piso_cl=picdl;
+        }
         void imprimeDatos(){
             cout<<"Estado de los dispositivos inteligentes del cuarto de lavado:"<<endl;
             cout<<"Carga Lavadora: "<<car_lavadora<<endl;
@@ -53,9 +73,19 @@ class CuartoLavado {
             cout<<"Carga Secadora: "<<car_secadora<<endl;
             cout<<"Secadora: "<<secadora<<endl;
             cout<<"Ropa de la secadora: "<<ropa_secadora<<endl;
-            cout<<"Bocina Inteligente: "<<bocina_int<<endl;
-            cout<<"Luces: "<<luces<<endl;
+            cout<<"Luces: "<<luces_cl<<endl;
             cout<<"Piso del cuarto de lavado: "<<piso_cl<<endl;
+        }
+        //Constructor
+        CuartoLavado() {
+            car_lavadora="descargada";
+            lavadora="apagada";
+            ropa_lavadora="sucia";
+            car_secadora="descargada";
+            secadora="apagada";
+            ropa_secadora="mojada";
+            luces_cl="apagadas";
+            piso_cl="sucio";
         }
 
 }; 

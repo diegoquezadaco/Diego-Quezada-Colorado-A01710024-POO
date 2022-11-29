@@ -1,95 +1,86 @@
+#ifndef CUARTO_H
+#define CUARTO_H
 #include <iostream>
 #include <string>
 using namespace std;
+#include"Habitacion.h"
+#include "ParteCasa.h"
 
-class Cuarto {
+class Cuarto : public Habitacion, public ParteCasa{
     private:
     string cama;
-    string aire_acon;
     string television;
-    string ventanas;
-    string persianas;
-    string bocina_int;
-    string luces_cua;
-    string color_luces;
-    string piso_cua;
-    
+    string color_luces; 
 
     public:
         //Getter
         string getCama() {
             return cama;
         }
-        string getAireAcon() {
-            return aire_acon;
-        }
         string getTelev() {
             return television;
-        }
-        string getVentana() {
-            return ventanas;
-        }
-        string getPersianas() {
-            return persianas;
-        }
-        string getBocinaInt() {
-            return bocina_int;
-        }
-        string getLucesCua() {
-            return luces_cua;
         }
         string getColorLu() {
             return color_luces;
         }
-        string getPisoCua() {
-            return piso_cua;
-        }
 
-        //setter
+        //setters
         void setCama(string cam) {
             cama=cam;
         }
-        void setAireAcon(string ac) {
-            aire_acon=ac;
+        void setTelev(string tv) {
+            television=tv;
         }
-        void setVentana(string ven) {
-            ventanas=ven;
+        void setColorLu(string colu) {
+            color_luces=colu;
         }
-        void setPersianas(string per) {
-            persianas=per;
+        //métodos clase
+        void tenderCama() {
+            cout<<"Tendiendo cama "<<endl;
+            _sleep(2000);
+            cama="tendida";
+            cout<<"Cama tendida con éxito"<<endl;
+            _sleep(1000);            
         }
-        void setBocinaInt(string boci) {
-            bocina_int=boci;
+        void encenderTV() {
+            television="encendida";
+            cout<<"televisión encendida con éxito"<<endl;
+            _sleep(1000);
         }
-        void setLucesCua(string lu) {
-            luces_cua=lu;
+        void apagarTV() {
+            television="apagada";
+            cout<<"televisión apagada con éxito"<<endl;
+            _sleep(1000);
         }
-        void setPisoCua(string picua) {
-            piso_cua=picua;
-        }
+        //metodos virtuales
         void imprimeDatos(){
-            cout<<"Estado de los dispositivos inteligentes del cuarto:"<<endl;
+            cout<<"Estado de los dispositivos inteligentes del cuarto:"<<nombre<<endl;
+            _sleep(1000);
             cout<<"Cama: "<<cama<<endl;
+            _sleep(1500);
             cout<<"Aire acondicionado: "<<aire_acon<<endl;
+            _sleep(1500);
             cout<<"Televisión: "<<television<<endl;
+            _sleep(1500);
             cout<<"Ventanas: "<<ventanas<<endl;
+            _sleep(1500);
             cout<<"Persianas: "<<persianas<<endl;
+            _sleep(1500);
             cout<<"Bocina Inteligente: "<<bocina_int<<endl;
-            cout<<"Luces: "<<luces_cua<<endl;
+            _sleep(1500);
+            cout<<"Luces: "<<luces<<endl;
+            _sleep(1500);
             cout<<"Color de las Luces: "<<color_luces<<endl;
-            cout<<"Piso de la habitación: "<<piso_cua<<endl;
+            _sleep(1500);
+            cout<<"Piso del cuarto: "<<piso<<endl;
+            _sleep(1500);
         }
         //Constructor
-        Cuarto () {
+        Cuarto () : Habitacion(), ParteCasa(){
             cama="destendida";
-            aire_acon="apagado";
             television="apagada";
-            ventanas="cerradas";
-            persianas="cerradas";
-            bocina_int="apagada";
-            luces_cua="apagadas";
             color_luces="blanco";
-            piso_cua="sucio";
         }
 
 }; 
+#endif

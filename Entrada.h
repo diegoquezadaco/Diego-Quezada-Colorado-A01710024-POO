@@ -1,19 +1,19 @@
+#ifndef ENTRADA_H
+#define ENTRADA_H
 #include <iostream>
 #include <string>
 using namespace std;
+#include "ParteCasa.h"
 
-class Entrada {
+class Entrada : public ParteCasa {
     private:
     string puerta;
     string segu_puerta;
     string carro;
     string porton;
-    string luces_ent;
-    string piso_coch;
-    
 
     public:
-        //Getter
+        //Getters
         string getPuerta() {
             return puerta;
         }
@@ -25,12 +25,6 @@ class Entrada {
         }
         string getPorton() {
             return porton;
-        }
-        string getLucesEnt() {
-            return luces_ent;
-        }
-        string getPisoCoch() {
-            return piso_coch;
         }
         //setter
         void setPuerta(string prt) {
@@ -45,29 +39,71 @@ class Entrada {
         void setPorton(string por) {
             porton=por;
         }
-        void setLucesEnt(string lu) {
-            luces_ent=lu;
+
+        //métodos clase
+        void cargarCarro(){
+            cout<<"Cargando carro "<<endl;
+            _sleep(7000);
+            cout<<"Carro cargado al 100% "<<endl;
+            carro="Cargado";
+            cout<<"Carro cargado con éxito "<<endl;
+            _sleep(1000);
         }
-        void setPisoCoch(string pie) {
-            piso_coch=pie;
+        void cerrarPorton(){
+            cout<<"Cerrando portón "<<endl;
+            _sleep(1000);
+            porton="Cerrado";
+            cout<<"Portón cerrado con éxito"<<endl;
+            _sleep(1000);
         }
+        void abrirPorton(){
+            cout<<"Cerrando portón "<<endl;
+            _sleep(1000);
+            porton="Cerrado";
+            cout<<"Portón cerrado con éxito"<<endl;
+            _sleep(1000);
+        }
+        void cerrarPuerta(){
+            cout<<"Cerrando puerta "<<endl;
+            _sleep(1000);
+            puerta="Cerrada";
+            cout<<"Puerta cerrado con éxito"<<endl;
+            _sleep(1000);
+        }
+        void abrirPuerta(){
+            cout<<"Abriendo puerta "<<endl;
+            _sleep(1000);
+            puerta="Abierta";
+            cout<<"Puerta abierta con éxito"<<endl;
+            _sleep(1000);
+        }
+        void bloquearPuerta(){
+            segu_puerta="Bloqueada";
+            cout<<"Puerta bloqueada con éxito"<<endl;
+            _sleep(1000);
+        }
+        void desbloquearPuerta(){
+            segu_puerta="Desloqueada";
+            cout<<"Puerta desbloqueada con éxito"<<endl;
+            _sleep(1000);
+        }
+        //métodos virtuales
         void imprimeDatos(){
-            cout<<"Estado de los dispositivos inteligentes de la entrada:"<<endl;
+            cout<<"Estado de los dispositivos inteligentes de la entrada:"<<nombre<<endl;
             cout<<"Puerta: "<<puerta<<endl;
             cout<<"Seguridad de la puerta: "<<segu_puerta<<endl;
             cout<<"Batería del vehículo: "<<carro<<endl;
             cout<<"Portón: "<<porton<<endl;
-            cout<<"Luces: "<<luces_ent<<endl;
-            cout<<"Piso de la entrada: "<<piso_coch<<endl;
+            cout<<"Luces: "<<luces<<endl;
+            cout<<"Piso de la entrada: "<<piso<<endl;
         }
-        //Constructor
-        Entrada() {
+        //Constructor por omisión
+        Entrada() : ParteCasa() {
             puerta="abierta";
             segu_puerta="desbloqueada";
             carro="descargado";
             porton="abierto";
-            luces_ent="apagadas";
-            piso_coch="sucio";
         }
 
 }; 
+#endif

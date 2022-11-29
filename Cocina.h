@@ -1,46 +1,29 @@
+#ifndef COCINA_H
+#define COCINA_H
 #include <iostream>
 #include <string>
 using namespace std;
+#include"Habitacion.h"
+#include "ParteCasa.h"
 
-class Cocina {
+class Cocina: public Habitacion, public ParteCasa {
     private:
     string lavavajillas;
     string robot_cocina;
-    string aire_acon;
     string estufa;
-    string ventanas;
-    string persianas;
-    string bocina_int;
-    string luces_coc;
     string cafetera;
     string horno;
-    string piso_coc;
 
     public:
-        //Getter
+        //Getters
         string getLavavajillas() {
             return lavavajillas;
         }
         string getRobotCocina() {
             return robot_cocina;
         }
-        string getAireAcon() {
-            return aire_acon;
-        }
         string getEstufa() {
             return estufa;
-        }
-        string getVentana() {
-            return ventanas;
-        }
-        string getPersianas() {
-            return persianas;
-        }
-        string getBocinaInt() {
-            return bocina_int;
-        }
-        string getLucesCoc() {
-            return luces_coc;
         }
         string getCafetera() {
             return cafetera;
@@ -48,34 +31,16 @@ class Cocina {
         string getHorno() {
             return horno;
         }
-        string getPisoCoc() {
-            return piso_coc;
-        }
 
-        //setter
+        //setters
         void setLavavajillas(string lav) {
             lavavajillas=lav;
         }
         void setRobotCocina(string rc) {
             robot_cocina=rc;
         }
-        void setAireAcon(string ac) {
-            aire_acon=ac;
-        }
         void setEstufa(string es) {
             estufa=es;
-        }
-        void setVentana(string ven) {
-            ventanas=ven;
-        }
-        void setPersianas(string per) {
-            persianas=per;
-        }
-        void setBocinaInt(string boci) {
-            bocina_int=boci;
-        }
-        void setLucesCoc(string lu) {
-            luces_coc=lu;
         }
         void setCafetera(string caf) {
             cafetera=caf;
@@ -83,37 +48,97 @@ class Cocina {
         void setHorno(string hor) {
             horno=hor;
         }
-        void setPisoCoc(string picoc) {
-            piso_coc=picoc;
+        //métodos clase
+        void activarLavavajillas(){
+            cout<<"Encendiendo lavavajillas "<<endl;
+            _sleep(500);
+            cout<<"Lavando tratos "<<endl;
+            _sleep(5000);
+            lavavajillas="Trastos limpios";
+            cout<<"Trastos lavados con éxito"<<endl;
+            _sleep(1000); 
         }
+        void cocinaRobotCoc(){
+            cout<<"Encendiendo Robot de cocina "<<endl;
+            _sleep(500);
+            cout<<"Cocinando comida "<<endl;
+            _sleep(5500);
+            robot_cocina="Comida lista";
+            cout<<"Comida preparada con éxito"<<endl;
+            _sleep(1000); 
+        }
+        void encenderEstufa(){
+            cout<<"Encendiendo estufa "<<endl;
+            _sleep(1000);
+            estufa="Encendida";
+            cout<<"Estufa encendida con éxito"<<endl;
+            _sleep(1000);
+        }
+        void apagarEstufa(){
+            estufa="Apagada";
+            cout<<"Estufa apagada con éxito"<<endl;
+            _sleep(1000);
+        }
+        void encenderCafetera(){
+            cout<<"Encendiendo Cafetera "<<endl;
+            _sleep(500);
+            cout<<"Preparando café "<<endl;
+            _sleep(2500);
+            cafetera="Café listo";
+            cout<<"Café preparado con éxito"<<endl;
+            _sleep(1000); 
+        }
+        void encenderHorno(){
+            cout<<"Encendiendo estufa "<<endl;
+            _sleep(1000);
+            horno="Encendido";
+            cout<<"Horno encendida con éxito"<<endl;
+            _sleep(1000);
+        }
+        void apagarHorno(){
+            cout<<"Apagando horno"<<endl;
+            _sleep(800);
+            horno="Apagado";
+            cout<<"Horno apagado con éxito"<<endl;
+            _sleep(1000);
+        }
+
+        //métodos virtuales
         void imprimeDatos(){
-            cout<<"Estado de los dispositivos inteligentes de la cocina:"<<endl;
-            _sleep(2000);
+            cout<<"Estado de los dispositivos inteligentes de la cocina:"<<nombre<<endl;
+            _sleep(1000);
             cout<<"Lavavajillas: "<<lavavajillas<<endl;
+            _sleep(1500);
             cout<<"Robot de cocina: "<<robot_cocina<<endl;
-            cout<<"Aire acondicionado: "<<aire_acon<<endl;
+            _sleep(1500);
             cout<<"Estufa: "<<estufa<<endl;
-            cout<<"Ventanas: "<<ventanas<<endl;
-            cout<<"Persianas: "<<persianas<<endl;
-            cout<<"Bocina Inteligente: "<<bocina_int<<endl;
-            cout<<"Luces: "<<luces_coc<<endl;
+            _sleep(1500);
             cout<<"Cafetera: "<<cafetera<<endl;
-            cout<<"Horno: "<<lavavajillas<<endl;
-            cout<<"Piso Cocina: "<<piso_coc<<endl;
+            _sleep(1500);
+            cout<<"Horno: "<<horno<<endl;
+            _sleep(1500);
+            cout<<"Aire acondicionado: "<<aire_acon<<endl;
+            _sleep(1500);
+            cout<<"Ventanas: "<<ventanas<<endl;
+            _sleep(1500);
+            cout<<"Persianas: "<<persianas<<endl;
+            _sleep(1500);
+            cout<<"Bocina Inteligente: "<<bocina_int<<endl;
+            _sleep(1500);
+            cout<<"Luces: "<<luces<<endl;
+            _sleep(1500);
+            cout<<"Piso de la cocina: "<<piso<<endl;
+            _sleep(1500);
         }
         //Constructor por omisión:
-        Cocina(){
+        Cocina() : Habitacion(), ParteCasa(){
             lavavajillas="trastos sucios";
             robot_cocina="no hay comida cocinada";
-            aire_acon="apagado";
             estufa="apagada";
-            ventanas="cerradas";
-            persianas="cerradas";
-            bocina_int="apagada";
-            luces_coc="apagadas";
             cafetera="apagada";
             horno="apagado";
-            piso_coc="sucio";
+            
         }
 
 }; 
+#endif

@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 #include "ParteCasa.h"
-#include<windows.h>
+#include <unistd.h>
 
 class Entrada : public ParteCasa {
     private:
@@ -44,75 +44,75 @@ class Entrada : public ParteCasa {
         //métodos clase
         void cargarCarro(){
             cout<<"Cargando carro "<<endl;
-            Sleep(6000);
+            sleep(20);
             cout<<"Carro cargado al 100% "<<endl;
-            Sleep(500);
+            sleep(7/3);
             carro="Cargado";
             cout<<"Carro cargado con éxito "<<endl;
-            Sleep(500);
+            sleep(7/3);
             cout<<endl;
         }
         void cerrarPorton(){
             cout<<"Cerrando portón "<<endl;
-            Sleep(1500);
+            sleep(10);
             porton="Cerrado";
             cout<<"Portón cerrado con éxito"<<endl;
-            Sleep(500);
+            sleep(5/3);
             cout<<endl;
         }
         void abrirPorton(){
             cout<<"Abriendo portón "<<endl;
-            Sleep(1500);
+            sleep(10);
             porton="Abierto";
-            Sleep(500);
+            sleep(5/3);
             cout<<"Portón abierto con éxito"<<endl;
-            Sleep(500);
+            sleep(5/3);
             cout<<endl;
         }
         void cerrarPuerta(){
             cout<<"Cerrando puerta "<<endl;
-            Sleep(400);
+            sleep(5);
             puerta="Cerrada";
             cout<<"Puerta cerrada con éxito"<<endl;
-            Sleep(500);
+            sleep(5/3);
             cout<<endl;
         }
         void abrirPuerta(){
             cout<<"Abriendo puerta "<<endl;
-            Sleep(400);
+            sleep(5);
             puerta="Abierta";
             cout<<"Puerta abierta con éxito"<<endl;
-            Sleep(500);
+            sleep(5/3);
             cout<<endl;
         }
         void bloquearPuerta(){
             segu_puerta="Bloqueada";
             cout<<"Puerta bloqueada con éxito"<<endl;
-            Sleep(500);
+            sleep(5/3);
             cout<<endl;
         }
         void desbloquearPuerta(){
             segu_puerta="Desloqueada";
             cout<<"Puerta desbloqueada con éxito"<<endl;
-            Sleep(500);
+            sleep(5/3);
             cout<<endl;
         }
         //métodos virtuales
         void imprimeDatos(){
             cout<<"Estado de los dispositivos inteligentes de la entrada:"<<endl<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<"Puerta: "<<puerta<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<"Seguridad de la puerta: "<<segu_puerta<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<"Batería del vehículo: "<<carro<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<"Portón: "<<porton<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<"Luces: "<<luces<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<"Piso de la entrada: "<<piso<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<endl;
         }
         //Constructor por omisión

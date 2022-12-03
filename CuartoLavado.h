@@ -5,7 +5,7 @@
 using namespace std;
 #include "ParteCasa.h"
 #include "LavadoraSecadora.h"
-#include<windows.h>
+#include <unistd.h>
 
 class CuartoLavado : public ParteCasa{
     private:
@@ -19,15 +19,15 @@ class CuartoLavado : public ParteCasa{
 
         void imprimeDatos(){
             cout<<"Estado de los dispositivos inteligentes del cuarto de lavado: "<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<"Ropa de la lavadora: "<<lavaseca.getRopaLava()<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<"Ropa de la secadora: "<<lavaseca.getRopaSeca()<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<"Luces: "<<luces<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<"Piso del cuarto de lavado: "<<piso<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<endl;
 
         }

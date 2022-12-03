@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-#include<windows.h>
+#include<unistd.h>
 
 class ParteCasa {
     protected:
@@ -30,21 +30,21 @@ class ParteCasa {
         void encenderLuces() {
             luces="Encendidas";
             cout<<"Las luces se prendieron correctamente "<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<endl;
         }
         void apagarLuces() {
             luces="Apagadas";
             cout<<"Las luces se apagaron correctamente "<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<endl;
         }
         void limpiaPiso() {
             cout<<"Limpiando el piso "<<endl;
-            Sleep(1500);
+            sleep(15/3);
             piso="Limpio";
             cout<<"El piso se limpió correctamente "<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<endl;
         }
     

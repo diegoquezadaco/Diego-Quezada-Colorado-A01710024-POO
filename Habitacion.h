@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-#include<windows.h>
+#include <unistd.h>
 
 class Habitacion {
     protected:
@@ -44,34 +44,42 @@ class Habitacion {
         void encenderAC() {
             aire_acon="Encendido";
             cout<<"El aire acondicionado se encendió correctamente "<<endl;
+            sleep(7/3);
         }
         void apagarAC() {
             aire_acon="Apagado";
             cout<<"El aire acondicionado se apagó correctamente "<<endl;
+            sleep(7/3);
         }
         void abrirVentana() {
             ventanas="Abiertas";
             cout<<"Las ventanas se abrieron correctamente "<<endl;
+            sleep(7/3);
         }
         void cerrarVentana() {
             ventanas="Cerradas";
             cout<<"Las ventanas se cerraron correctamente "<<endl;
+            sleep(7/3);
         }
         void abrirPersiana() {
             persianas="Abiertas";
             cout<<"Las persianas se abrieron correctamente "<<endl;
+            sleep(7/3);
         }
         void cerrarPersiana() {
             persianas="Cerradas";
             cout<<"Las persianas se cerraron correctamente "<<endl;
+            sleep(7/3);
         }
         void encenderBocina() {
             bocina_int="Encendida";
             cout<<"La bocina se encendió correctamente "<<endl;
+            sleep(7/3);
         }
         void apagarBocina() {
             bocina_int="Apagada";
             cout<<"La bocina se apagó correctamente "<<endl;
+            sleep(7/3);
         }
         //Constructor por omisión
         Habitacion(){

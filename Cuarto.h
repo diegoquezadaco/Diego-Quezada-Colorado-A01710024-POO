@@ -5,7 +5,7 @@
 using namespace std;
 #include"Habitacion.h"
 #include "ParteCasa.h"
-#include<windows.h>
+#include <unistd.h>
 
 class Cuarto : public Habitacion, public ParteCasa{
     private:
@@ -38,45 +38,45 @@ class Cuarto : public Habitacion, public ParteCasa{
         //métodos clase
         void tenderCama() {
             cout<<"Tendiendo cama "<<endl;
-            Sleep(900);
+            sleep(9/3);
             cama="Tendida";
             cout<<"Cama tendida con éxito"<<endl;
-            Sleep(500);
+            sleep(5/3);
         }
         void encenderTV() {
             television="Encendida";
             cout<<"televisión encendida con éxito"<<endl;
-            Sleep(500);
+            sleep(5/3);
             cout<<endl;
         }
         void apagarTV() {
             television="Apagada";
             cout<<"televisión apagada con éxito"<<endl;
-            Sleep(500);
+            sleep(5/3);
             cout<<endl;
         }
         //metodos virtuales
         void imprimeDatos(){
             cout<<"Estado de los dispositivos inteligentes del cuarto:"<<endl<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<"Cama: "<<cama<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<"Aire acondicionado: "<<aire_acon<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<"Televisión: "<<television<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<"Ventanas: "<<ventanas<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<"Persianas: "<<persianas<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<"Bocina Inteligente: "<<bocina_int<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<"Luces: "<<luces<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<"Color de las Luces: "<<color_luces<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<"Piso del cuarto: "<<piso<<endl;
-            Sleep(700);
+            sleep(7/3);
             cout<<endl;
         }
         //Constructor

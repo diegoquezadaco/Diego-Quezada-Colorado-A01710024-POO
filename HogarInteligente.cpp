@@ -259,6 +259,7 @@ int main() {
                 break;
             }
         }while (oc1=!0);
+        }
         else if (oc==2){
             int oc2;
             do {
@@ -290,7 +291,7 @@ int main() {
             Sleep(700);
             cout<<"----------------------------------------"<<endl<<endl;
             cin>>oc2;
-            if (oc==1){
+            if (oc2==1){
                 if (room.getAireAcon()=="Apagado"){
                     room.encenderAC();
                 }
@@ -298,7 +299,7 @@ int main() {
                     room.apagarAC();
                 }
             }
-            else if (oc==2){
+            else if (oc2==2){
                 if (room.getVentana()=="Cerradas"){
                     room.abrirVentana();
                 }
@@ -306,7 +307,7 @@ int main() {
                     room.cerrarVentana();
                 }
             }
-            else if (oc==3){
+            else if (oc2==3){
                 if (room.getPersianas()=="Cerradas"){
                     room.abrirPersiana();
                 }
@@ -314,7 +315,7 @@ int main() {
                     room.cerrarPersiana();
                 }
             }
-            else if (oc==4){
+            else if (oc2==4){
                 if (room.getBocinaInt()=="Apagada"){
                     room.encenderBocina();
                 }
@@ -322,7 +323,7 @@ int main() {
                     room.apagarBocina();
                 }
             }
-            else if (oc==5){
+            else if (oc2==5){
                 if (room.getLuces()=="Apagadas"){
                     room.encenderLuces();
                 }
@@ -330,13 +331,13 @@ int main() {
                     room.apagarLuces();
                 }
             }
-            else if (oc==6){
+            else if (oc2==6){
                 room.limpiaPiso();
             }
-            else if (oc==7){
+            else if (oc2==7){
                 room.tenderCama();
             }
-            else if (oc==8){
+            else if (oc2==8){
                 if(room.getTelev()=="Apagada"){
                     room.encenderTV();
                 }
@@ -344,7 +345,7 @@ int main() {
                     room.apagarTV();
                 }
             }
-            else if (oc==9){
+            else if (oc2==9){
                 string color;
                 cout<<"Ingrese el color que desea que sean sus luces: "<<endl;
                 cin>>color;
@@ -352,7 +353,7 @@ int main() {
                 cout<<"El color de sus luces se ha cambiado exitosamente a: "<<room.getColorLu()<<endl;
                 Sleep(700);
             }
-            else if (oc==0){
+            else if (oc2==0){
                 cout<<"Regresando al menú principal..."<<endl;
                 Sleep(700);
             }
@@ -361,7 +362,7 @@ int main() {
                 Sleep(700);
                 break;
             }
-            }while (oc=!0);
+            }while (oc2=!0);
         }
         else if (oc==3){
             cout<<"Regresando al menú principal..."<<endl;
@@ -370,7 +371,6 @@ int main() {
         }
         }while (oc!=3);
         }
-    }
  
     else if (opcion==3){
         laundry.imprimeDatos();

@@ -5,6 +5,7 @@
 using namespace std;
 #include"Habitacion.h"
 #include "ParteCasa.h"
+#include<windows.h>
 
 class Cuarto : public Habitacion, public ParteCasa{
     private:
@@ -37,49 +38,52 @@ class Cuarto : public Habitacion, public ParteCasa{
         //métodos clase
         void tenderCama() {
             cout<<"Tendiendo cama "<<endl;
-            _sleep(2000);
-            cama="tendida";
+            Sleep(900);
+            cama="Tendida";
             cout<<"Cama tendida con éxito"<<endl;
-            _sleep(1000);            
+            Sleep(500);
         }
         void encenderTV() {
-            television="encendida";
+            television="Encendida";
             cout<<"televisión encendida con éxito"<<endl;
-            _sleep(1000);
+            Sleep(500);
+            cout<<endl;
         }
         void apagarTV() {
-            television="apagada";
+            television="Apagada";
             cout<<"televisión apagada con éxito"<<endl;
-            _sleep(1000);
+            Sleep(500);
+            cout<<endl;
         }
         //metodos virtuales
         void imprimeDatos(){
-            cout<<"Estado de los dispositivos inteligentes del cuarto:"<<nombre<<endl;
-            _sleep(1000);
+            cout<<"Estado de los dispositivos inteligentes del cuarto:"<<endl<<endl;
+            Sleep(700);
             cout<<"Cama: "<<cama<<endl;
-            _sleep(1500);
+            Sleep(700);
             cout<<"Aire acondicionado: "<<aire_acon<<endl;
-            _sleep(1500);
+            Sleep(700);
             cout<<"Televisión: "<<television<<endl;
-            _sleep(1500);
+            Sleep(700);
             cout<<"Ventanas: "<<ventanas<<endl;
-            _sleep(1500);
+            Sleep(700);
             cout<<"Persianas: "<<persianas<<endl;
-            _sleep(1500);
+            Sleep(700);
             cout<<"Bocina Inteligente: "<<bocina_int<<endl;
-            _sleep(1500);
+            Sleep(700);
             cout<<"Luces: "<<luces<<endl;
-            _sleep(1500);
+            Sleep(700);
             cout<<"Color de las Luces: "<<color_luces<<endl;
-            _sleep(1500);
+            Sleep(700);
             cout<<"Piso del cuarto: "<<piso<<endl;
-            _sleep(1500);
+            Sleep(700);
+            cout<<endl;
         }
         //Constructor
         Cuarto () : Habitacion(), ParteCasa(){
-            cama="destendida";
-            television="apagada";
-            color_luces="blanco";
+            cama="Destendida";
+            television="Apagada";
+            color_luces="Blanco";
         }
 
 }; 

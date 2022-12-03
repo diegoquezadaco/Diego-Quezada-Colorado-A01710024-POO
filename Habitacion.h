@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
+#include<windows.h>
 
 class Habitacion {
     protected:
@@ -41,35 +42,43 @@ class Habitacion {
         }
         //métodos de clase madre
         void encenderAC() {
-            aire_acon="encendido";
+            aire_acon="Encendido";
+            cout<<"El aire acondicionado se encendió correctamente "<<endl;
         }
         void apagarAC() {
-            aire_acon="apagado";
+            aire_acon="Apagado";
+            cout<<"El aire acondicionado se apagó correctamente "<<endl;
         }
         void abrirVentana() {
-            ventanas="abiertas";
+            ventanas="Abiertas";
+            cout<<"Las ventanas se abrieron correctamente "<<endl;
         }
         void cerrarVentana() {
-            ventanas="cerradas";
+            ventanas="Cerradas";
+            cout<<"Las ventanas se cerraron correctamente "<<endl;
         }
         void abrirPersiana() {
-            persianas="cerradas";
+            persianas="Abiertas";
+            cout<<"Las persianas se abrieron correctamente "<<endl;
         }
         void cerrarPersiana() {
-            persianas="cerradas";
+            persianas="Cerradas";
+            cout<<"Las persianas se cerraron correctamente "<<endl;
         }
         void encenderBocina() {
-            bocina_int="encendida";
+            bocina_int="Encendida";
+            cout<<"La bocina se encendió correctamente "<<endl;
         }
         void apagarBocina() {
-            bocina_int="apagada";
+            bocina_int="Apagada";
+            cout<<"La bocina se apagó correctamente "<<endl;
         }
         //Constructor por omisión
         Habitacion(){
-            aire_acon="apagado";
-            ventanas="cerradas";
-            persianas="cerradas";
-            bocina_int="apagada";
+            aire_acon="Apagado";
+            ventanas="Cerradas";
+            persianas="Cerradas";
+            bocina_int="Apagada";
         }
 
 }; 

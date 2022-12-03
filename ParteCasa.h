@@ -3,19 +3,15 @@
 #include <iostream>
 #include <string>
 using namespace std;
+#include<windows.h>
 
 class ParteCasa {
     protected:
-    string nombre;
     string luces;
     string piso;
-    
 
     public:
         //Getters
-        string getNombre() {
-            return nombre;
-        }
         string getLuces() {
             return luces;
         }
@@ -23,9 +19,6 @@ class ParteCasa {
             return piso;
         }
         //setters
-        void setNombre(string no) {
-            nombre=no;
-        }
         void setLuces(string lu) {
             luces=lu;
         }
@@ -35,34 +28,36 @@ class ParteCasa {
         
         //métodos de clase madre
         void encenderLuces() {
-            luces="encendidas";
+            luces="Encendidas";
             cout<<"Las luces se prendieron correctamente "<<endl;
-            _sleep(2000);
+            Sleep(700);
+            cout<<endl;
         }
         void apagarLuces() {
-            luces="apagadas";
+            luces="Apagadas";
             cout<<"Las luces se apagaron correctamente "<<endl;
-            _sleep(2000);
+            Sleep(700);
+            cout<<endl;
         }
         void limpiaPiso() {
             cout<<"Limpiando el piso "<<endl;
-            _sleep(2000);
-            piso="limpio";
+            Sleep(1500);
+            piso="Limpio";
             cout<<"El piso se limpió correctamente "<<endl;
-            _sleep(1000);
+            Sleep(700);
+            cout<<endl;
         }
     
         //Método virtual
         virtual void imprimeDatos(){
             cout<<"Estado de los dispositivos inteligentes: "<<endl;
-            _sleep(5000);
         }
-        //Constructor por omisión
+        //Constructor
         ParteCasa(){
-            nombre="";
-            luces="apagadas";
-            piso="sucio";
+            luces="Apagadas";
+            piso="Sucio";
         }
 
 }; 
+
 #endif

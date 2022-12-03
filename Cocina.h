@@ -5,6 +5,7 @@
 using namespace std;
 #include"Habitacion.h"
 #include "ParteCasa.h"
+#include<windows.h>
 
 class Cocina: public Habitacion, public ParteCasa {
     private:
@@ -51,92 +52,100 @@ class Cocina: public Habitacion, public ParteCasa {
         //métodos clase
         void activarLavavajillas(){
             cout<<"Encendiendo lavavajillas "<<endl;
-            _sleep(500);
+            Sleep(500);            
             cout<<"Lavando tratos "<<endl;
-            _sleep(5000);
+            Sleep(4000);
             lavavajillas="Trastos limpios";
             cout<<"Trastos lavados con éxito"<<endl;
-            _sleep(1000); 
+            Sleep(500);
+            cout<<endl;             
         }
         void cocinaRobotCoc(){
             cout<<"Encendiendo Robot de cocina "<<endl;
-            _sleep(500);
+            Sleep(500);            
             cout<<"Cocinando comida "<<endl;
-            _sleep(5500);
+            Sleep(4000);
             robot_cocina="Comida lista";
             cout<<"Comida preparada con éxito"<<endl;
-            _sleep(1000); 
+            Sleep(500);
+            cout<<endl;             
         }
         void encenderEstufa(){
             cout<<"Encendiendo estufa "<<endl;
-            _sleep(1000);
+            Sleep(500);
             estufa="Encendida";
             cout<<"Estufa encendida con éxito"<<endl;
-            _sleep(1000);
+            Sleep(500);
+            cout<<endl;            
         }
         void apagarEstufa(){
             estufa="Apagada";
             cout<<"Estufa apagada con éxito"<<endl;
-            _sleep(1000);
+            Sleep(500);
+            cout<<endl;            
         }
         void encenderCafetera(){
             cout<<"Encendiendo Cafetera "<<endl;
-            _sleep(500);
+            Sleep(500);            
             cout<<"Preparando café "<<endl;
-            _sleep(2500);
+            Sleep(2000);
             cafetera="Café listo";
             cout<<"Café preparado con éxito"<<endl;
-            _sleep(1000); 
+            Sleep(500);
+            cout<<endl;             
         }
         void encenderHorno(){
             cout<<"Encendiendo estufa "<<endl;
-            _sleep(1000);
+            Sleep(500);
             horno="Encendido";
             cout<<"Horno encendida con éxito"<<endl;
-            _sleep(1000);
+            Sleep(500);
+            cout<<endl;
         }
         void apagarHorno(){
             cout<<"Apagando horno"<<endl;
-            _sleep(800);
+            Sleep(500);            
             horno="Apagado";
             cout<<"Horno apagado con éxito"<<endl;
-            _sleep(1000);
+            Sleep(500);
+            cout<<endl;
         }
 
         //métodos virtuales
         void imprimeDatos(){
-            cout<<"Estado de los dispositivos inteligentes de la cocina:"<<nombre<<endl;
-            _sleep(1000);
+            cout<<"Estado de los dispositivos inteligentes de la cocina:"<<endl<<endl;;
+            Sleep(700);
             cout<<"Lavavajillas: "<<lavavajillas<<endl;
-            _sleep(1500);
+            Sleep(700);
             cout<<"Robot de cocina: "<<robot_cocina<<endl;
-            _sleep(1500);
+            Sleep(700);            
             cout<<"Estufa: "<<estufa<<endl;
-            _sleep(1500);
+            Sleep(700);            
             cout<<"Cafetera: "<<cafetera<<endl;
-            _sleep(1500);
+            Sleep(700);            
             cout<<"Horno: "<<horno<<endl;
-            _sleep(1500);
+            Sleep(700);            
             cout<<"Aire acondicionado: "<<aire_acon<<endl;
-            _sleep(1500);
+            Sleep(700);            
             cout<<"Ventanas: "<<ventanas<<endl;
-            _sleep(1500);
+            Sleep(700);
             cout<<"Persianas: "<<persianas<<endl;
-            _sleep(1500);
+            Sleep(700);
             cout<<"Bocina Inteligente: "<<bocina_int<<endl;
-            _sleep(1500);
+            Sleep(700);
             cout<<"Luces: "<<luces<<endl;
-            _sleep(1500);
+            Sleep(700);
             cout<<"Piso de la cocina: "<<piso<<endl;
-            _sleep(1500);
+            Sleep(700);
+            cout<<endl;
         }
         //Constructor por omisión:
         Cocina() : Habitacion(), ParteCasa(){
-            lavavajillas="trastos sucios";
-            robot_cocina="no hay comida cocinada";
-            estufa="apagada";
-            cafetera="apagada";
-            horno="apagado";
+            lavavajillas="Trastos sucios";
+            robot_cocina="No hay comida cocinada";
+            estufa="Apagada";
+            cafetera="Apagada";
+            horno="Apagado";
             
         }
 

@@ -3,7 +3,7 @@
 using namespace std;
 #include <iostream>
 #include <string>
-
+#include<windows.h>
 
 
 class LavadoraSecadora {
@@ -38,40 +38,46 @@ class LavadoraSecadora {
         //métodos clase
         void usarLavadora(){
             cout<<"Encendiendo lavadora "<<endl;
-            _sleep(1000);
+            Sleep(500);
             cout<<"Introduzca la cantidad de ropa a lavar en kg, recuerde que no puede ser superior a 15 kg :"<<endl;
             cin>>kg_carga;
+            cout<<endl;
             if ((kg_carga<=0)||(kg_carga>15)){
                 cout<<"Peso no válido, intentelo de nuevo por favor "<<endl;
-                _sleep(2000);
+                cout<<endl;
             }
             else {
                 cout<<"Comenzando ciclo de lavado "<<endl;
-                _sleep(500);
+                Sleep(500);
                 cout<<"Remojando"<<endl;
-                _sleep(1000);
+                Sleep(2500);
                 cout<<"Lavando"<<endl;
-                _sleep(3000);
+                Sleep(3000);
                 cout<<"Exprimiendo"<<endl;
-                _sleep(2000);
+                Sleep(2000);
                 cout<<"Ciclo de lavado terminado"<<endl;
-                _sleep(200);
+                Sleep(500);
                 ropa_lavadora="Limpia";
                 cout<<"Ropa lavada exitosamente"<<endl;
-                _sleep(1000);
+                Sleep(550);
+                cout<<endl;
                 cout<<"¿Desea meter esta ropa a la secadora? (si/no) "<<endl;
                 cin>>usar_secadora;
                 if (usar_secadora=="si") {
                     cout<<"Encendiendo secadora"<<endl;
-                    _sleep(500);
+                    Sleep(500);
                     cout<<"Secando"<<endl;
-                    _sleep(4000);
+                    Sleep(2000);
                     ropa_secadora="Seca";
                     cout<<"Ropa secada exitosamente"<<endl;
-                    _sleep(300);
-                }
+                    Sleep(550);
+                    cout<<endl;
+                    }
                 else{
                     cout<<"Esta bien, su ropa se queda mojada"<<endl;
+                    Sleep(450);
+                    cout<<endl;
+    
                 }
             }
             }

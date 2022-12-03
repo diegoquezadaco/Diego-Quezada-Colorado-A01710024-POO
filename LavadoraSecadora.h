@@ -6,7 +6,8 @@ using namespace std;
 #include <unistd.h>
 
 
-class LavadoraSecadora { //Componente de la clase CuartoLavado
+class LavadoraSecadora { //Componente de la clase CuartoLavado, ya que si no se tiene un cuarto de lavado no se puede tener una lavadora secadora
+    //en otras palabras si el cuarto de lavado desaparece, la lavadora secadora no tiene donde existir
     private:
     float kg_carga=0.0;
     string ropa_lavadora;

@@ -1,26 +1,44 @@
-#include <iostream>
-#include "Habitacion.h"
-#include "ParteCasa.h"
-#include "Cocina.h"
-#include "Cuarto.h"
-#include "CuartoLavado.h"
-#include "Entrada.h"
-#include <string>
-using namespace std;
-#include <unistd.h>
+/*
+ * Proyecto Simulador de Hogar Inteligente
+ * Diego Quezada Colorado 
+ * A01710024
+ * 02/12/2022
+ */
+
+/**
+ * Descripción, básicamente este programa simula un hogar inteligente,
+ * mediante el cual , el usuario puede encender y apagar dispositivos 
+ * inteligentes de su hogar, como luces, aire acondicionado, televisión, etc.
+ * O incluso puede cambiar el estado de estos dispositivos, como por ejemplo
+ * cambiar el color de las luces, o la carga de su vehículo eléctrico.
+*/
+
+//Bibliotecas
+#include <iostream> //Entrada y salida de datos
+#include "Habitacion.h" //Clase habitación, clase padre de cuarto y cocina
+#include "ParteCasa.h" //Clase parte de casa, madre de habitación, cuarto de lavado, enntrada y cocina
+#include "Cocina.h" //Clase cocina
+#include "Cuarto.h" //Clase cuarto
+#include "CuartoLavado.h" //Clase cuarto de lavado, compuesto por lavadora y secadora
+#include "Entrada.h" //Clase entrada
+#include <string> //Para usar strings
+using namespace std; //Para no tener que poner std:: antes de cada comando
+#include <unistd.h> //Para usar sleep, que recibe el tiempo a ejecutar en segundos
 int opcion;
 int main() {
-    CuartoLavado laundry;
-    Entrada entry;
-    Cocina kitchen;
-    Cuarto bedroom;
-    Cuarto room;
-    cout<<"Bienvenido a su hogar inteligente"<<endl;
-    sleep(5/3);
-    cout<<"Seleccione la parte de la casa que desea controlar"<<endl;
-    sleep(1/30);
+    CuartoLavado laundry; //Objeto de la clase cuarto de lavado
+    Entrada entry; //Objeto de la clase entrada
+    Cocina kitchen; //Objeto de la clase cocina
+    Cuarto bedroom; //Objeto de la clase cuarto, Cuarto 1
+    Cuarto room; //Objeto de la clase cuarto, Cuarto 2
+    // Menú
+    cout<<"Bienvenido a su hogar inteligente"<<endl; //Mensaje de bienvenida
+    sleep(5/3); //Todos los sleeps son para que el usuario pueda leer el mensaje antes de que se imprima el siguiente
+    cout<<"Seleccione la parte de la casa que desea controlar"<<endl; 
+    sleep(2/3);
+    //utilizamos do while para que el programa se ejecute al menos una vez, y después se repita hasta que el usuario ingrese la opción de salida
     do {
-    cout<<"-----MENÚ----"<<endl<<endl;
+    cout<<"-----MENÚ-----"<<endl<<endl;
     sleep(5/3);
     cout<<"1. Cocina"<<endl;
     sleep(5/3);
@@ -30,7 +48,7 @@ int main() {
     sleep(5/3);
     cout<<"4. Entrada"<<endl;
     sleep(5/3);
-    cout<<"5 Salir"<<endl;
+    cout<<"5. Salir"<<endl;
     sleep(5/3);
     cout<<"Seleccione la opción deseada: "<<endl;
     sleep(5/3);
@@ -38,37 +56,37 @@ int main() {
     cin>>opcion;
     cout<<endl;
     if (opcion==1){
-        kitchen.imprimeDatos();
+        kitchen.imprimeDatos(); //Imprime los datos de la cocina    
         int ococ;
         do {
         cout<<"--MENÚ de los dispositivos para cambiar su estado:--"<<endl<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"1. Lavavajillas"<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"2. Robot de cocina"<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"3. Estufa"<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"4. Cafetera"<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"5. Horno"<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"6. Aire acondicionado"<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"7. Ventanas"<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"8. Persianas"<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"9. Bocina inteligente"<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"10. Luces"<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"11. Piso"<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"12. Regresar al menú principal"<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"Seleccione la opción deseada: "<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"----------------------------------------"<<endl;
         cin>>ococ;
         cout<<endl;
@@ -90,20 +108,17 @@ int main() {
             kitchen.encenderCafetera();
         }
         else if (ococ==5){
-            kitchen.activarLavavajillas();
+            kitchen.encenderHorno();
         }
         else if (ococ==6){
-            kitchen.encenderHorno();
-        } 
-        else if (ococ==7){
             if (kitchen.getAireAcon()=="Apagado"){
                 kitchen.encenderAC();
             }
             else {
                 kitchen.apagarAC();
             }
-        }
-        else if (ococ==8){
+        } 
+        else if (ococ==7){
             if (kitchen.getVentana()=="Cerradas"){
                 kitchen.abrirVentana();
             }
@@ -111,7 +126,7 @@ int main() {
                 kitchen.cerrarVentana();
             }
         }
-        else if (ococ==9){
+        else if (ococ==8){
             if (kitchen.getPersianas()=="Cerradas"){
                 kitchen.abrirPersiana();
             }
@@ -119,7 +134,7 @@ int main() {
                 kitchen.cerrarPersiana();
             }
         }
-        else if (ococ==10){
+        else if (ococ==9){
             if (kitchen.getBocinaInt()=="Apagada"){
                 kitchen.encenderBocina();
             }
@@ -127,7 +142,7 @@ int main() {
                 kitchen.apagarBocina();
             }
         }
-        else if (ococ==11){
+        else if (ococ==10){
             if (kitchen.getLuces()=="Apagadas"){
                 kitchen.encenderLuces();
             }
@@ -135,56 +150,64 @@ int main() {
                 kitchen.apagarLuces();
             }
         }
-        else if (ococ==12){
+        else if (ococ==11){
             kitchen.limpiaPiso();
+        }
+        else if (ococ==12){
+            cout<<"Regresando al menú principal"<<endl;
+            sleep(5/3);
+            break; //Se rompe el ciclo para regresar al menú principal
             }
-        }while (ococ=!13);
+        }while (ococ=!12); //Se repite el ciclo hasta que el usuario ingrese la opción de regresar al menú principal
     }
         
     else if (opcion==2){
-        bedroom.imprimeDatos();
-        room.imprimeDatos();
+        cout<<"Cuarto 1"<<endl<<endl;
+        bedroom.imprimeDatos(); //Imprime los datos del cuarto 1
+        cout<<"Cuarto 2"<<endl<<endl;
+        room.imprimeDatos(); //Imprime los datos del cuarto 2
         int oc;
+        //Se repite el mismo proceso que en la cocina
         do {
-        cout<<"¿Qué cuarto desea modificar?"<<endl;
-        sleep(7/3);
+        cout<<"¿Qué cuarto desea modificar?"<<endl; //Se pregunta al usuario qué cuarto desea modificar
+        sleep(5/3);
         cout<<"1. Cuarto 1"<<endl;
-        sleep(7/3);
+        sleep(5/3);
         cout<<"2. Cuarto 2"<<endl;
-        sleep(7/3);
+        sleep(5/3);
         cout<<"3. Regresar al menú principal"<<endl;
-        sleep(7/3);
+        sleep(5/3);
         cout<<"Seleccione la opción deseada: "<<endl;   
         cin>>oc;
-        if (oc==1){
+        if (oc==1){ //Si el usuario ingresa 1, se le muestran las opciones para modificar el cuarto 1
             int oc1;
             do {
             cout<<"--MENÚ de los dispositivos inteligentes del Cuarto 1 para cambiar su estado:--"<<endl<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"1. Aire acondicionado"<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"2. Ventanas"<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"3. Persianas"<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"4. Bocina inteligente"<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"5. Luces"<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"6. Piso"<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"7. Cama"<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"8. Televisión"<<endl;
-            sleep(7/3);
-            if (bedroom.getLuces()=="Encendidas"){
+            sleep(5/3);
+            if (bedroom.getLuces()=="Encendidas"){ //Si las luces están encendidas, se le da la opción de cambiar el color
                 cout<<"9. Color Luces"<<endl;
-                sleep(7/3);
+                sleep(5/3);
             }       
             cout<<"0. Regresar al menú principal"<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"Seleccione la opción deseada: "<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"----------------------------------------"<<endl<<endl;
             cin>>oc1;
             if (oc1==1){
@@ -247,48 +270,49 @@ int main() {
                 cin>>color;
                 bedroom.setColorLu(color);
                 cout<<"El color de sus luces se ha cambiado exitosamente a: "<<bedroom.getColorLu()<<endl;
-                sleep(7/3);
+                sleep(5/3);
             }
             else if (oc1==0){
                 cout<<"Regresando al menú principal..."<<endl;
-                sleep(7/3);
+                sleep(5/3);
+                break;
             }
             else {
                 cout<<"Opción no válida, intente de nuevo."<<endl;
-                sleep(7/3);
+                sleep(5/3);
                 break;
             }
-        }while (oc1=!0);
+        }while (oc1=!0); 
         }
-        else if (oc==2){
+        else if (oc==2){ //Si el usuario ingresa 2, se le muestran las opciones para modificar el cuarto 2
             int oc2;
             do {
             cout<<"--MENÚ de los dispositivos inteligentes del cuarto 2 para cambiar su estado:--"<<endl<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"1. Aire acondicionado"<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"2. Ventanas"<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"3. Persianas"<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"4. Bocina inteligente"<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"5. Luces"<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"6. Piso"<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"7. Cama"<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"8. Televisión"<<endl;
-            sleep(7/3);
+            sleep(5/3);
             if (room.getLuces()=="Encendidas"){
                 cout<<"9. Color Luces"<<endl;
-                sleep(7/3);
+                sleep(5/3);
             }       
             cout<<"0. Regresar al menú principal"<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"Seleccione la opción deseada: "<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"----------------------------------------"<<endl<<endl;
             cin>>oc2;
             if (oc2==1){
@@ -351,43 +375,44 @@ int main() {
                 cin>>color;
                 room.setColorLu(color);
                 cout<<"El color de sus luces se ha cambiado exitosamente a: "<<room.getColorLu()<<endl;
-                sleep(7/3);
+                sleep(5/3);
             }
             else if (oc2==0){
                 cout<<"Regresando al menú principal..."<<endl;
-                sleep(7/3);
+                sleep(5/3);
+                break;
             }
             else {
                 cout<<"Opción no válida, intente de nuevo."<<endl;
-                sleep(7/3);
+                sleep(5/3);
                 break;
             }
             }while (oc2=!0);
         }
-        else if (oc==3){
+        else if (oc==3){ 
             cout<<"Regresando al menú principal..."<<endl;
             sleep(1/30);
             break;
         }
-        }while (oc!=3);
+        }while (oc!=3); //Si el usuario ingresa 3, se le regresa al menú principal
         }
  
     else if (opcion==3){
-        laundry.imprimeDatos();
+        laundry.imprimeDatos(); //Se imprimen los datos del cuarto de lavado
         int oclo;
         do {
         cout<<"---Menú de los dispositivos inteligentes del Cuarto de Lavado para cambiar su estado:---"<<endl<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"1. Lavasecadora"<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"2. Luces"<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"3. Piso"<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"4. Regresar al menú principal"<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"Seleccione la opción deseada: "<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"----------------------------------------"<<endl;
         cin>>oclo;
         cout<<endl;
@@ -413,23 +438,23 @@ int main() {
         int ocen;
         do {
         cout<<"Menú de los dispositivos inteligentes de la entrada para cambiar su estado:"<<endl<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"1. Puerta"<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"2. Luces"<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"3. Piso"<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"4. Seguridad de la puerta"<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"5. Carga del vehículo"<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"6. Portón"<<endl;
-        sleep(8/3);
-        cout<<"7. Regresar al menú principal"<<endl;
-        sleep(8/3);
+        sleep(5/3);
+        cout<<"7. Regresar al menú principal"<<endl; //Si el usuario ingresa 7, se le regresa al menú principal
+        sleep(5/3);
         cout<<"Seleccione la opción deseada: "<<endl;
-        sleep(8/3);
+        sleep(5/3);
         cout<<"----------------------------------------"<<endl;
         cin>>ocen;
         cout<<endl;
@@ -475,12 +500,12 @@ int main() {
 
     } 
     else if (opcion==5){
-        cout<<"Gracias por utilizar la app :)";
-        break;
+        cout<<"Gracias por utilizar la app :)"; //Si el usuario ingresa 5, se le muestra un mensaje de despedida
+        break; //Se sale del ciclo
     }
     else{
-        cout<<"Número equivocado, intentelo de nuevo"<<endl;
+        cout<<"Número equivocado, intentelo de nuevo"<<endl; //Si el usuario ingresa un número que no está en el menú, se le muestra un mensaje de error
     }
-    }while(opcion!=5);
-    return 0;
+    }while(opcion!=5); //Si el usuario ingresa 5, se sale del ciclo
+    return 0; //Se termina el programa
 }

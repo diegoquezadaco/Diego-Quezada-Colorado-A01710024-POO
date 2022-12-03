@@ -7,32 +7,40 @@ using namespace std;
 #include "LavadoraSecadora.h"
 #include <unistd.h>
 
-class CuartoLavado : public ParteCasa{
+class CuartoLavado : public ParteCasa{ //clase hija de ParteCasa
     private:
-    LavadoraSecadora lavaseca;    
+    LavadoraSecadora lavaseca; //Indicamos composición con la clase LavadoraSecadora
 
     public:
+        //Getters
+        LavadoraSecadora getLavaseca() {
+            return lavaseca;
+        }
+        //setter
+        void setLavaseca(LavadoraSecadora ls) {
+            lavaseca=ls;
+        }
         //métodos clase
         void usarLavadoraSecadora(){
             lavaseca.usarLavadora();
         }        
 
-        void imprimeDatos(){
+        void imprimeDatos(){ //método para imprimir los datos de la clase
             cout<<"Estado de los dispositivos inteligentes del cuarto de lavado: "<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"Ropa de la lavadora: "<<lavaseca.getRopaLava()<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"Ropa de la secadora: "<<lavaseca.getRopaSeca()<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"Luces: "<<luces<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"Piso del cuarto de lavado: "<<piso<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<endl;
 
         }
         //Constructor por omisión
-        CuartoLavado() : ParteCasa() {
+        CuartoLavado() : ParteCasa() { //Indicamos que el constructor por omisión de la clase madre se ejecuta en el constructor por omisión de la clase hija
             lavaseca.setRopaLava("Sucia");
             lavaseca.setRopaSeca("Mojada");
         }

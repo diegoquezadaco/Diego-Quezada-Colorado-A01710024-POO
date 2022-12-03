@@ -41,45 +41,45 @@ class Habitacion {
             bocina_int=boci;
         }
         //métodos de clase madre
-        void encenderAC() {
+        void encenderAC() { //encender aire acondicionado de la habitación
             aire_acon="Encendido";
             cout<<"El aire acondicionado se encendió correctamente "<<endl;
-            sleep(7/3);
+            sleep(5/3);
         }
-        void apagarAC() {
+        void apagarAC() { //apagar aire acondicionado de la habitación
             aire_acon="Apagado";
             cout<<"El aire acondicionado se apagó correctamente "<<endl;
-            sleep(7/3);
+            sleep(5/3);
         }
-        void abrirVentana() {
+        void abrirVentana() { //abre las ventanas de la habitación
             ventanas="Abiertas";
             cout<<"Las ventanas se abrieron correctamente "<<endl;
-            sleep(7/3);
+            sleep(5/3);
         }
-        void cerrarVentana() {
+        void cerrarVentana() { //cierra las ventanas de la habitación
             ventanas="Cerradas";
             cout<<"Las ventanas se cerraron correctamente "<<endl;
-            sleep(7/3);
+            sleep(5/3);
         }
-        void abrirPersiana() {
+        void abrirPersiana() { //abre las persianas de la habitación
             persianas="Abiertas";
             cout<<"Las persianas se abrieron correctamente "<<endl;
-            sleep(7/3);
+            sleep(5/3);
         }
-        void cerrarPersiana() {
+        void cerrarPersiana() { //cierra las persianas de la habitación
             persianas="Cerradas";
             cout<<"Las persianas se cerraron correctamente "<<endl;
-            sleep(7/3);
+            sleep(5/3);
         }
-        void encenderBocina() {
+        void encenderBocina() { //enciende la bocina inteligente de la habitación
             bocina_int="Encendida";
             cout<<"La bocina se encendió correctamente "<<endl;
-            sleep(7/3);
+            sleep(5/3);
         }
-        void apagarBocina() {
+        void apagarBocina() { //apaga la bocina inteligente de la habitación
             bocina_int="Apagada";
             cout<<"La bocina se apagó correctamente "<<endl;
-            sleep(7/3);
+            sleep(5/3);
         }
         //Constructor por omisión
         Habitacion(){

@@ -27,32 +27,32 @@ class ParteCasa {
         }
         
         //métodos de clase madre
-        void encenderLuces() {
+        void encenderLuces() { //método para encender luces de la parte de la casa
             luces="Encendidas";
             cout<<"Las luces se prendieron correctamente "<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<endl;
         }
-        void apagarLuces() {
+        void apagarLuces() { //método para apagar luces de la parte de la casa
             luces="Apagadas";
             cout<<"Las luces se apagaron correctamente "<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<endl;
         }
-        void limpiaPiso() {
+        void limpiaPiso() { //método para limpiar el piso de la parte de la casa
             cout<<"Limpiando el piso "<<endl;
             sleep(15/3);
             piso="Limpio";
             cout<<"El piso se limpió correctamente "<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<endl;
         }
     
         //Método virtual
-        virtual void imprimeDatos(){
+        virtual void imprimeDatos(){ //método virtual, que cada clase hija debe definir para imprimir los datos de la parte de la casa
             cout<<"Estado de los dispositivos inteligentes: "<<endl;
         }
-        //Constructor
+        //Constructor por omisión
         ParteCasa(){
             luces="Apagadas";
             piso="Sucio";

@@ -7,7 +7,7 @@ using namespace std;
 #include "ParteCasa.h"
 #include <unistd.h>
 
-class Cuarto : public Habitacion, public ParteCasa{
+class Cuarto : public Habitacion, public ParteCasa{ //clase cuarto que hereda de habitación y parte de casa
     private:
     string cama;
     string television;
@@ -36,51 +36,51 @@ class Cuarto : public Habitacion, public ParteCasa{
             color_luces=colu;
         }
         //métodos clase
-        void tenderCama() {
+        void tenderCama() { //tender la cama del cuarto
             cout<<"Tendiendo cama "<<endl;
-            sleep(9/3);
+            sleep(5/3);
             cama="Tendida";
             cout<<"Cama tendida con éxito"<<endl;
             sleep(5/3);
         }
-        void encenderTV() {
+        void encenderTV() {  //encender la televisión del cuarto
             television="Encendida";
             cout<<"televisión encendida con éxito"<<endl;
             sleep(5/3);
             cout<<endl;
         }
-        void apagarTV() {
+        void apagarTV() { //método para apagar la televisión del cuarto
             television="Apagada";
             cout<<"televisión apagada con éxito"<<endl;
             sleep(5/3);
             cout<<endl;
         }
         //metodos virtuales
-        void imprimeDatos(){
+        void imprimeDatos(){ //método para imprimir datos de la clase
             cout<<"Estado de los dispositivos inteligentes del cuarto:"<<endl<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"Cama: "<<cama<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"Aire acondicionado: "<<aire_acon<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"Televisión: "<<television<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"Ventanas: "<<ventanas<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"Persianas: "<<persianas<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"Bocina Inteligente: "<<bocina_int<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"Luces: "<<luces<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"Color de las Luces: "<<color_luces<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<"Piso del cuarto: "<<piso<<endl;
-            sleep(7/3);
+            sleep(5/3);
             cout<<endl;
         }
-        //Constructor
-        Cuarto () : Habitacion(), ParteCasa(){
+        //Constructor por omisión:
+        Cuarto () : Habitacion(), ParteCasa(){ //Indicamos que el constructor por omisión de las clase madre se ejecutan en el constructor por omisión de la clase hija
             cama="Destendida";
             television="Apagada";
             color_luces="Blanco";
